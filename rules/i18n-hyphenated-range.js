@@ -24,7 +24,7 @@ function makeFixerFunction( arg ) {
 			case 'TemplateLiteral':
 				return arg.quasis.reduce( ( fixes, quasi ) => {
 					if (
-						'TemplateElement' === quasi.type &&
+						quasi.type === 'TemplateElement' &&
 						quasi.value.raw.match( HYPHEN_IN_RANGE )
 					) {
 						fixes.push(

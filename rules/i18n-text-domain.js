@@ -117,7 +117,7 @@ module.exports = {
 					return;
 				}
 
-				if ( 'default' === value && allowDefault ) {
+				if ( value === 'default' && allowDefault ) {
 					const removeDefaultTextDomain = ( fixer ) => {
 						const previousArgIndex = args.indexOf( textDomain ) - 1;
 						const previousArg = args[ previousArgIndex ];

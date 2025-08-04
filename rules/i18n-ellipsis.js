@@ -22,7 +22,7 @@ function makeFixerFunction( arg ) {
 			case 'TemplateLiteral':
 				return arg.quasis.reduce( ( fixes, quasi ) => {
 					if (
-						'TemplateElement' === quasi.type &&
+						quasi.type === 'TemplateElement' &&
 						quasi.value.raw.includes( THREE_DOTS )
 					) {
 						fixes.push(

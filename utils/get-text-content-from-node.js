@@ -7,11 +7,11 @@
  * @return {string|boolean} The concatenated string or false.
  */
 function getTextContentFromNode( node ) {
-	if ( 'Literal' === node.type ) {
+	if ( node.type === 'Literal' ) {
 		return node.value;
 	}
 
-	if ( 'BinaryExpression' === node.type && '+' === node.operator ) {
+	if ( node.type === 'BinaryExpression' && node.operator === '+' ) {
 		const left = getTextContentFromNode( node.left );
 		const right = getTextContentFromNode( node.right );
 

@@ -8,21 +8,21 @@ const {
 } = require( '../utils' );
 
 function isAcceptableLiteralNode( node ) {
-	if ( 'BinaryExpression' === node.type ) {
+	if ( node.type === 'BinaryExpression' ) {
 		return (
-			'+' === node.operator &&
+			node.operator === '+' &&
 			isAcceptableLiteralNode( node.left ) &&
 			isAcceptableLiteralNode( node.right )
 		);
 	}
 
-	if ( 'TemplateLiteral' === node.type ) {
+	if ( node.type === 'TemplateLiteral' ) {
 		// Backticks are fine, but if there's any interpolation in it,
 		// that's a problem.
 		return node.expressions.length === 0;
 	}
 
-	return 'Literal' === node.type;
+	return node.type === 'Literal';
 }
 
 module.exports = {
