@@ -11,8 +11,10 @@ import rule from '../no-unused-vars-before-return';
 const ruleTester = new RuleTester( {
 	languageOptions: {
 		ecmaVersion: 6,
-		ecmaFeatures: {
-			jsx: true,
+		parserOptions: {
+			ecmaFeatures: {
+				jsx: true,
+			},
 		},
 	},
 } );
