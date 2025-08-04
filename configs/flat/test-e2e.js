@@ -1,11 +1,19 @@
+/**
+ * External dependencies
+ */
+const jest = require( 'eslint-plugin-jest' );
+const globals = require( 'globals' );
+
 module.exports = {
-	extends: [ 'plugin:jest/recommended' ],
-	env: {
-		browser: true,
-	},
-	globals: {
-		browser: 'readonly',
-		page: 'readonly',
-		wp: 'readonly',
+	...jest.configs[ 'flat/recommended' ],
+	name: '@wordpress/test-e2e',
+	languageOptions: {
+		globals: {
+			...jest.configs[ 'flat/recommended' ].languageOptions.globals,
+			...globals.browser,
+			browser: 'readonly',
+			page: 'readonly',
+			wp: 'readonly',
+		},
 	},
 };
