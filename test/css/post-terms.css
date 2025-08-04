@@ -1,0 +1,29 @@
+/**
+ * WP BLOCK: POST-TERMS
+ */
+
+.wp-block-post-terms {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: calc(var(--wp--custom--element-spacing) / 4);
+	margin-block-start: clamp(15px, 0.805rem + 0.64vi, 18px);
+
+	a {
+		opacity: 0.75;
+
+		&:hover,
+		&:focus {
+			opacity: 1;
+		}
+	}
+
+	.wp-block-cover & {
+		max-inline-size: 50rem;
+		margin-inline: auto;
+	}
+}
+
+.wp-block-post-terms__separator {
+	display: none;
+}

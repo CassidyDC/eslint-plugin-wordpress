@@ -1,0 +1,174 @@
+/**
+ * WP EDITOR ONLY
+ * This file is only used by the WP editor and is NOT applied to the live frontend that visitors see.
+ */
+
+// -----------------------------------------------
+// BLOCK EDITOR: POST TITLE
+// -----------------------------------------------
+.edit-post-visual-editor__post-title-wrapper {
+	border-block-end: 2px solid var(--wp--preset--color--gray-white);
+	margin: 0 !important;
+	padding: var(--wp--custom--element-spacing);
+
+	h1 {
+		color: var(--wp--preset--color--gray-dark);
+		margin: 0 auto !important;
+		font-size: var(--wp--preset--font-size--x-large);
+		text-align: center;
+	}
+}
+
+.wp-block-cover {
+	// -----------------------------------------------
+	// BLOCK EDITOR: SINGLE POST HERO
+	// -----------------------------------------------
+	.wp-block-post-author__name {
+		margin-block-start: 0;
+	}
+
+	.wp-block-post-terms {
+		a {
+			color: var(--wp--preset--color--white);
+
+			// &:hover,
+			// &:focus {
+			//   text-decoration: none;
+			// }
+		}
+	}
+
+	// -----------------------------------------------
+	// BLOCK EDITOR: WP-BLOCK-HEADING IN COVER
+	// -----------------------------------------------
+	.wp-block-cover {
+		.wp-block-heading:where(:not(.has-text-color)) {
+			color: inherit;
+		}
+	}
+}
+
+// -----------------------------------------------
+// BLOCK EDITOR: POST ARTICLE
+// -----------------------------------------------
+.wp-block-post-content {
+	article {
+		margin-block-start: calc(var(--wp--custom--element-spacing) * 3);
+
+		@media screen and (width <= calc( (768 / 16) * 1rem )) {
+			margin-block-start: calc(var(--wp--custom--element-spacing) * 2);
+		}
+	}
+}
+
+// -----------------------------------------------
+// WP-BLOCK-BUTTON: SIZES
+// -----------------------------------------------
+.wp-block-button {
+	&:where(.has-size-large) {
+		.wp-element-button {
+			font-size: var(--wp--preset--font-size--large);
+			line-height: var(--wp--custom--line-height--large);
+		}
+	}
+
+	&:where(.has-size-small) {
+		.wp-element-button {
+			font-size: var(--wp--preset--font-size--small);
+			line-height: var(--wp--custom--line-height--small);
+		}
+	}
+
+	&:where(.has-size-tiny) {
+		.wp-element-button {
+			font-size: var(--wp--preset--font-size--tiny);
+			line-height: var(--wp--custom--line-height--tiny);
+		}
+	}
+}
+
+// ---------------------------------------------------
+// BLOCK EDITOR: NOT-BTN (EXAMPLE: PRODUCTS PAGES)
+// ---------------------------------------------------
+.wp-block-button:is(.not-btn) {
+	.wp-element-button {
+		background-color: transparent;
+		padding: 0;
+	}
+}
+
+// -----------------------------------------------
+// BLOCK EDITOR: ELEMENTS
+// -----------------------------------------------
+select {
+	max-inline-size: 100%;
+}
+
+.scrolldown {
+	position: relative;
+	inset-block-end: 0;
+}
+
+figure {
+	&:has(iframe) {
+		block-size: 100%;
+		margin: 0;
+	}
+}
+
+.is-layout-flex > .wp-block-buttons {
+	margin-block-start: 0;
+}
+
+// -----------------------------------------------
+// WP-BLOCK-BUTTON: OUTLINE STYLE
+// -----------------------------------------------
+// The duplicate class is to override the theme.json dup output.
+// See: https://github.com/WordPress/gutenberg/issues/49835
+.wp-block-button.is-style-outline.is-style-outline {
+	&:where(.has-size-large) {
+		.wp-element-button {
+			padding: 0.625rem 1.375rem;
+		}
+	}
+
+	&:where(.has-size-small) {
+		.wp-element-button {
+			padding: 0.3125rem 0.75rem;
+		}
+	}
+
+	&:where(.has-size-tiny) {
+		.wp-element-button {
+			border-width: 0.0625rem;
+			padding: 0.3125rem 0.6875rem;
+			font-weight: 400;
+		}
+	}
+}
+
+// -----------------------------------------------
+// WP SYNCED PATTERNS
+// -----------------------------------------------
+.block-library-block__reusable-block-container {
+	&.alignfull {
+		margin-block-start: 0;
+	}
+}
+
+// -----------------------------------------------
+// PATTERN PREVIEWS
+// -----------------------------------------------
+.block-editor-block-preview__content-iframe {
+	.sidebar-left-container,
+	.grid {
+		margin-inline: var(--wp--custom--site-spacing) !important;
+	}
+}
+
+// -----------------------------------------------
+// TABLE OF CONTENTS BLOCK
+// -----------------------------------------------
+.wp-block-banyan-table-of-contents {
+	inset-block-start: 0;
+}

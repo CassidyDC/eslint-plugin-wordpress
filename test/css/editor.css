@@ -1,0 +1,5 @@
+.components-circular-option-picker__option-wrapper {
+	button[aria-selected="true"][aria-label="Color: White"] + svg {
+		fill: #000;
+	}
+}

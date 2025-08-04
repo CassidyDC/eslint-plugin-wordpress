@@ -1,0 +1,20 @@
+/**
+ * WP BLOCK: IMAGE
+ */
+
+body figure {
+	&:is(.wp-block-image) {
+		&.alignleft,
+		&.alignright {
+			margin-block-end: 12px;
+		}
+
+		&.alignleft {
+			margin-inline-end: 24px;
+		}
+
+		&.alignright {
+			margin-inline-start: 24px;
+		}
+	}
+}

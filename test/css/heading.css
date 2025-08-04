@@ -1,0 +1,19 @@
+/**
+ * WP BLOCK: HEADING
+ */
+
+:root {
+	:where(.wp-block-heading) {
+		&.is-style-section-heading {
+			&::after {
+				content: "";
+				display: block;
+				background-color: currentcolor;
+				opacity: 0.5;
+				block-size: 2px;
+				inline-size: calc(var(--wp--custom--element-spacing) * 3);
+				margin-block-start: calc(var(--wp--custom--element-spacing) / 2);
+			}
+		}
+	}
+}

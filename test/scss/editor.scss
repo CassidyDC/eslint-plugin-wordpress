@@ -1,0 +1,35 @@
+/* CSS nesting does NOT get parsed with WP v6.4 add_editor_style() function, so SCSS is used here for now */
+
+// ------------------------
+// DEFAULTS
+// ------------------------
+@use "defaults/custom-properties";
+@use "defaults/elements";
+@use "defaults/utility-classes";
+
+// ------------------------
+// COMPONENTS
+// ------------------------
+@use "components/animations";
+@use "components/boxes";
+@use "components/buttons";
+@use "components/forms";
+@use "components/grids";
+@use "components/icons";
+@use "components/splide";
+@use "components/testimonials";
+@use "components/typography";
+
+// ------------------------
+// SECTIONS
+// ------------------------
+@use "sections/global";
+@use "sections/cta";
+@use "sections/inc-5000";
+@use "sections/posts";
+@use "sections/site-header";
+
+// ------------------------
+// EDITOR
+// ------------------------
+@use "editor/wp-editor-only";

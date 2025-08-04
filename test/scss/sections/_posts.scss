@@ -1,0 +1,31 @@
+/**
+ * SINGLE POST LAYOUT
+ */
+
+// -----------------------------------------------
+// POST META
+// -----------------------------------------------
+.post-meta {
+	gap: 0;
+	color: var(--wp--preset--color--gray-extra-light);
+	margin-block-start: clamp(15px, 0.805rem + 0.64vi, 18px);
+}
+
+.post-meta__by {
+	&::after {
+		content: "\00a0";
+	}
+
+	&.has-author {
+		&::after {
+			display: none;
+		}
+	}
+}
+
+.post-meta__separator {
+	&::before,
+	&::after {
+		content: "\00a0";
+	}
+}

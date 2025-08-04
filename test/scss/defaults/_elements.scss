@@ -1,0 +1,160 @@
+/**
+ * DEFAULTS
+ */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+html {
+	// Scroll offset
+	@media screen and (width >= calc( (1280 / 16) * 1rem)) {
+		scroll-padding-block-start: calc(
+			var(--wp-admin--admin-bar--height, 0px) + var(--sticky-header--height, 144px) +
+				var(--wp--custom--element-spacing, 24px)
+		);
+	}
+
+	// Scroll offset when WP Admin Bar has a static position
+	@media screen and (width <= 600px) {
+		scroll-padding-block-start: 0;
+	}
+}
+
+:focus-visible {
+	outline: var(--wp--preset--color--secondary) solid 2px;
+	outline-offset: 2px;
+}
+
+body {
+	accent-color: var(--wp--preset--color--secondary);
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizespeed;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+img,
+picture {
+	block-size: auto;
+	max-inline-size: 100%;
+}
+
+button,
+input[type="button"],
+input[type="submit"] {
+	appearance: none;
+	cursor: pointer;
+	margin: 0;
+
+	&:disabled {
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			cursor: not-allowed;
+			background-color: var(--wp--preset--color--gray-extra-light);
+			border: none;
+			color: var(--wp--preset--color--gray);
+		}
+	}
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="submit"],
+textarea:focus {
+	transition:
+		250ms background-color ease-in-out,
+		250ms border-color ease-in-out,
+		250ms color ease-in-out;
+}
+
+input[type="radio"] {
+	cursor: pointer;
+	block-size: var(--wp--custom--element-spacing);
+	inline-size: var(--wp--custom--element-spacing);
+}
+
+p,
+li,
+td {
+	> a {
+		font-weight: 500;
+	}
+}
+
+p,
+li:where(:not(.wp-block-navigation-item, .wp-block-social-link)) {
+	&,
+	em,
+	strong {
+		> a {
+			border-block-end: 1px solid currentcolor;
+
+			&:where(:hover, :focus) {
+				border-color: transparent;
+			}
+		}
+	}
+}
+
+ul,
+ol {
+	margin-block: var(--wp--custom--element-spacing) 0;
+	padding-inline-start: calc(var(--wp--custom--element-spacing) * 2);
+
+	li {
+		margin-block-start: calc(var(--wp--custom--element-spacing) / 2);
+	}
+
+	@media screen and (width <= calc( (767 / 16) * 1rem)) {
+		padding-inline-start: calc(var(--wp--custom--element-spacing) * 1.5);
+	}
+}
+
+h1,
+h2,
+h3 {
+	text-wrap: balance;
+}
+
+table {
+	border-color: var(--wp--preset--color--gray-extra-light);
+}
+
+strong {
+	font-weight: 700;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html,
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		scroll-behavior: auto !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}

@@ -1,0 +1,166 @@
+/**
+ * BUTTONS
+ */
+
+// Fill style
+// &:not(.is-style-outline) {
+// 	.wp-element-button:not(.has-background) {
+// 		&::before {
+// 			filter: var(--filter-primary-white);
+// 		}
+// 	}
+// }
+
+// Outline style
+// &.is-style-outline {'0
+//   .wp-element-button {
+//     &:hover {
+//       &::before {
+//         filter: var(--filter-gray-dark);
+//       }
+//     }
+//   }
+// }
+// }
+
+// -----------------------------------------------
+// BUTTONS: EXTERNAL URL
+// -----------------------------------------------
+// a.external-url,
+// .external-url a {
+// 	display: flex;
+// 	align-items: center;
+
+// 	&::before {
+// 		content: url(https://banyanutility.com/wp-content/themes/banyan/assets/images/icons/external-link.svg);
+// 		display: inline-block;
+// 		width: 1rem;
+// 		height: 1rem;
+// 		line-height: 1;
+// 		margin-inline-end: 0.5rem;
+// 	}
+// }
+
+// -----------------------------------------------
+// BUTTONS: DEFAULTS
+// //-----------------------------------------------
+// :root {
+// 	:where(
+// 		button:not(
+// 			.wp-block-navigation-item__content,
+// 			.splide__pagination__page, /* stylelint-disable-line selector-class-pattern -- splide not following BEM */
+// 			.wp-block-social-link-anchor,
+// 			.block-editor-button-block-appender,
+// 			.components-button
+// 		),
+// 		input[type="button"],
+// 		input[type="submit"],
+// 		.btn-wrap a,
+// 		.btn
+// 	) {
+// 		background-color: var(--wp--preset--color--primary);
+// 		border: 2px solid transparent;
+// 		border-radius: var(--wp--custom--default-border-radius);
+// 		color: var(--wp--preset--color--primary-white);
+// 		// line-height: var(--wp--custom--line-height--medium);
+// 		padding: 0.375rem 0.875rem;
+// 		// font-size: var(--wp--preset--font-size--medium);
+// 		font-weight: 700;
+// 		text-wrap: balance;
+
+// 		&:hover,
+// 		&:focus {
+// 			background-color: var(--wp--preset--color--primary-medium);
+// 			color: var(--wp--preset--color--white);
+// 			// text-decoration: none;
+// 		}
+
+// 		&:active {
+// 			background-color: var(--wp--preset--color--primary-light);
+// 		}
+// 	}
+// }
+
+// button:where(
+// 		:not(
+// 				.wp-block-navigation-item__content,
+// 				.splide__pagination__page, /* stylelint-disable-line selector-class-pattern -- splide not following BEM */
+// 				.wp-block-social-link-anchor,
+// 				.block-editor-button-block-appender,
+// 				.components-button
+// 			)
+// 	),
+// input[type="button"],
+// input[type="submit"],
+// .btn-wrap a,
+// .btn {
+// 	background-color: var(--wp--preset--color--primary);
+// 	border: none;
+// 	border-radius: var(--wp--custom--default-border-radius);
+// 	color: var(--wp--preset--color--primary-white);
+// 	font-size: var(--wp--preset--font-size--medium);
+// 	font-weight: 700;
+// 	line-height: var(--wp--custom--line-height--medium);
+// 	padding: 0.5rem 1rem;
+// 	text-wrap: balance;
+
+// 	&:hover,
+// 	&:focus {
+// 		background-color: var(--wp--preset--color--primary-medium);
+// 		color: var(--wp--preset--color--white);
+// 		// text-decoration: none;
+// 	}
+
+// 	&:active {
+// 		background-color: var(--wp--preset--color--primary-light);
+// 	}
+// }
+
+// -----------------------------------------------
+// BUTTONS: BACK TO TOP
+// -----------------------------------------------
+// .back-to-top-wrap {
+// 	display: flex;
+// 	align-items: center;
+// }
+
+// .back-to-top {
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	position: relative;
+// 	background-color: var(--wp--preset--color--gray-extra-light);
+// 	border-radius: 50%;
+// 	margin: 0 0 0 0.75rem;
+// 	height: 2rem;
+// 	width: 2rem;
+// 	text-indent: -9999px;
+// &::before {
+// 	content: "";
+// 	position: absolute;
+// 	top: 0.75rem;
+// 	transform: rotate(-135deg);
+// 	border: solid var(--wp--preset--color--white);
+// 	border-width: 0 0.1875rem 0.1875rem 0;
+// 	height: 0.75rem;
+// 	width: 0.75rem;
+// }
+
+// 	&:hover {
+// 		background-color: var(--wp--preset--color--primary);
+// 	}
+// }
+
+// -----------------------------------------------
+// BUTTONS: SCROLLDOWN
+// -----------------------------------------------
+// .scrolldown {
+// 	position: absolute;
+// 	bottom: calc(var(--wp--custom--element-spacing) * 1.5);
+// 	left: calc(50% - var(--wp--custom--element-spacing));
+// 	padding-bottom: 4px;
+
+// 	&.circle-icon {
+// 		border-width: 2px;
+// 	}
+// }

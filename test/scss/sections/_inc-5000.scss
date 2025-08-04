@@ -1,0 +1,23 @@
+/**
+ * INC 5000
+ */
+
+// -----------------------------------------------
+// INC 5000 SECTION
+// -----------------------------------------------
+.inc-5000__logo {
+	margin-inline-start: var(--wp--custom--site-spacing);
+}
+
+@media screen and (width <= 782px) {
+	.is-inc-5000-section {
+		h2 {
+			text-align: center;
+		}
+
+		.inc-5000__logo {
+			margin: var(--wp--custom--element-spacing) auto 0;
+			text-align: center;
+		}
+	}
+}

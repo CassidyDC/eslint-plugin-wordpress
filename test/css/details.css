@@ -1,0 +1,30 @@
+/**
+ * WP BLOCK: DETAILS
+ */
+
+.wp-block-details {
+	background: var(--wp--preset--color--gray-white);
+	border-radius: var(--wp--custom--default-border-radius);
+	margin-block-start: 12px;
+	padding: 12px;
+
+	summary {
+		background: var(--wp--preset--color--primary);
+		border-radius: var(--wp--custom--default-border-radius);
+		color: var(--wp--preset--color--white);
+		padding: 12px 24px;
+		font-weight: 700;
+
+		~ * {
+			margin: 24px;
+
+			&:last-child {
+				padding-block-end: 24px;
+			}
+		}
+	}
+
+	&[open] summary ~ * {
+		animation: fadeindown 0.3s ease-in-out;
+	}
+}

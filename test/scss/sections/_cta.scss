@@ -1,0 +1,69 @@
+/**
+ * CTA
+ */
+
+// -----------------------------------------------
+// CTA SECTION
+// -----------------------------------------------
+.is-cta-section {
+	position: relative;
+
+	&::before,
+	&::after {
+		content: "";
+		position-anchor: set;
+		position: absolute;
+		z-index: 1;
+		display: block;
+	}
+
+	&::before {
+		inset-block-start: calc(50% - 83px);
+		inset-inline-start: 0;
+		background: url("https://banyanutility.com/wp-content/themes/banyan/assets/images/icons/water-bg-icon.svg");
+		background-size: contain;
+		block-size: 165px;
+		inline-size: 315px;
+	}
+
+	&::after {
+		inset-block-start: unset;
+		inset-block-end: 0;
+		inset-inline-start: unset;
+		inset-inline-end: 48px;
+		background: url("https://banyanutility.com/wp-content/themes/banyan/assets/images/icons/fire-bg-icon.svg");
+		background-size: contain;
+		block-size: 349px;
+		inline-size: 273px;
+	}
+
+	> * {
+		position: relative;
+		z-index: 2;
+	}
+
+	@media screen and (width <= 768px) {
+		&::before {
+			display: none;
+		}
+
+		&::after {
+			inset-inline-end: 24px;
+			block-size: 233px;
+			inline-size: 182px;
+		}
+	}
+}
+
+// -----------------------------------------------
+// PRODUCT CTA SECTION
+// -----------------------------------------------
+.is-product-cta {
+	.wp-block-buttons {
+		gap: 16px;
+
+		@media (width <= calc( 500 / 16 * 1rem)) {
+			gap: calc(var(--wp--custom--element-spacing) / 2);
+		}
+	}
+}

@@ -1,0 +1,48 @@
+/**
+ * UTILITY CLASSES
+ */
+
+// -----------------------------------------------
+// CENTER ON MOBILE
+// -----------------------------------------------
+@media screen and (width <= calc( (768 / 16) * 1rem)) {
+	.center-on-mobile:is(h1, h2, h3, h4, h5, h6, p) {
+		text-align: center;
+	}
+
+	.wp-block-separator.center-on-mobile:not(.aligncenter) {
+		margin-inline: auto !important;
+	}
+}
+
+// -----------------------------------------------
+// IMAGE SHADOW
+// -----------------------------------------------
+.img-shadow img {
+	box-shadow:
+		inset 0 -30px 30px rgb(0 0 0 / 10%),
+		3px 3px 10px rgb(0 0 0 / 30%);
+}
+
+// -----------------------------------------------
+// STACK ON MOBILE
+// -----------------------------------------------
+@media screen and (width <= calc( (768 / 16) * 1rem)) {
+	.stack-on-mobile {
+		flex-direction: column;
+	}
+}
+
+// -----------------------------------------------
+// TEXT STYLES
+// -----------------------------------------------
+.twb {
+	text-wrap: balance;
+}
+
+// -----------------------------------------------
+// VISIBILITY
+// -----------------------------------------------
+.display-none {
+	display: none;
+}

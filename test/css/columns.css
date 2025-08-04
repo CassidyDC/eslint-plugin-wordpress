@@ -1,0 +1,73 @@
+/**
+ * WP BLOCK: COLUMNS
+ */
+
+.wp-block-columns:is(.sidebar-left-container) {
+	gap: calc(var(--wp--custom--element-spacing) * 3) var(--wp--custom--site-spacing);
+	margin: calc(var(--wp--custom--element-spacing) * 4) auto;
+
+	.sidebar-wrap {
+		display: flex;
+		flex-direction: column;
+		gap: calc(var(--wp--custom--element-spacing) * 2);
+
+		&.state-stats {
+			gap: var(--wp--custom--element-spacing);
+		}
+
+		.box {
+			margin: 0;
+		}
+	}
+
+	.content-wrap {
+		max-inline-size: 51.5rem;
+	}
+
+	@media screen and (width >= calc( (1280 / 16) * 1rem)) {
+		column-gap: calc(var(--wp--custom--site-spacing) * 1.5);
+	}
+
+	@media screen and (width <= calc( (1320 / 16) * 1rem)) {
+		.box:not(.is-sticker-box) {
+			.wp-block-buttons {
+				flex-direction: column;
+			}
+
+			.wp-block-button,
+			.wp-element-button {
+				inline-size: 100%;
+				max-inline-size: 27.5rem;
+			}
+		}
+	}
+
+	@media screen and (width <= calc( (960 / 16) * 1rem)) {
+		flex-direction: column-reverse;
+
+		.single-state & {
+			flex-direction: column;
+		}
+
+		&.default-flex-col-on-mobile {
+			flex-direction: column;
+		}
+
+		.content-wrap {
+			max-inline-size: 100%;
+		}
+	}
+
+	@media screen and (width <= calc( (768 / 16) * 1rem)) {
+		margin: calc(var(--wp--custom--element-spacing) * 3) auto;
+
+		.wp-block-buttons {
+			flex-direction: column;
+		}
+
+		.wp-block-button,
+		.wp-element-button {
+			inline-size: 100%;
+		}
+	}
+}

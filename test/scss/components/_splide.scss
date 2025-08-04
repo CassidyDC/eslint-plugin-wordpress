@@ -1,0 +1,78 @@
+/**
+ * SPLIDE
+ */
+
+// -----------------------------------------------
+// SPLIDE: DEFAULT STYLES
+// -----------------------------------------------
+// SPLIDE
+.splide {
+	position: relative;
+	overflow: hidden;
+}
+
+// SPLIDE__LIST
+.splide__list {
+	display: flex;
+	block-size: 100%;
+
+	// SPLIDE__SLIDE
+	> li {
+		position: relative;
+		flex-shrink: 0;
+		inline-size: 100%;
+		margin: 0;
+		padding: 0 var(--wp--custom--element-spacing);
+		text-align: justify;
+
+		@media (width <= calc( (767.9 / 16) * 1rem )) {
+			text-align: start;
+		}
+	}
+}
+
+// SPLIDE__PAGINATION
+.splide__pagination {
+	pointer-events: none;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+
+	li {
+		pointer-events: auto;
+		display: flex;
+		list-style-type: none;
+		margin: 0;
+	}
+}
+
+/* stylelint-disable-next-line selector-class-pattern -- Splide class doesn't follow BEM format */
+.splide__pagination__page {
+	background: var(--wp--preset--color--white);
+	border: 0;
+	border-radius: 50%;
+	opacity: 0.5;
+	block-size: 0.75rem;
+	inline-size: 0.75rem;
+	margin: 3px;
+	padding: 0;
+	transition: transform 0.2s opacity 0.2s linear;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&.is-active {
+		transform: scale(1.2);
+		opacity: 0.9;
+	}
+
+	.is-light & {
+		background: var(--wp--preset--color--primary);
+	}
+}
+
+.splide__sr {
+	display: none;
+}

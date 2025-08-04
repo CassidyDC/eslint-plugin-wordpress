@@ -1,0 +1,27 @@
+/**
+ * WP BLOCK: QUOTE
+ */
+
+.wp-block-quote {
+	border-radius: var(--wp--custom--default-border-radius);
+	border-inline-start: 4px solid var(--wp--preset--color--gray-extra-light);
+	color: var(--wp--preset--color--gray);
+	padding-inline-start: var(--wp--custom--element-spacing);
+	font-weight: 700;
+
+	cite {
+		display: block;
+		font-size: var(--wp--preset--font-size--small);
+		font-style: italic;
+		font-weight: 600;
+		line-height: var(--wp--custom--line-height--small);
+	}
+
+	> * {
+		margin-block-start: 0;
+
+		+ * {
+			margin-block-start: var(--wp--custom--element-spacing);
+		}
+	}
+}
