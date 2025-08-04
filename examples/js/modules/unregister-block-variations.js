@@ -3,7 +3,10 @@
  */
 
 import domReady from '@wordpress/dom-ready';
-import { getBlockVariations, unregisterBlockVariation } from '@wordpress/blocks';
+import {
+	getBlockVariations,
+	unregisterBlockVariation,
+} from '@wordpress/blocks';
 
 const allowedEmbedBlocks = [ 'youtube' ];
 

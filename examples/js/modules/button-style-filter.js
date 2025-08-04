@@ -58,7 +58,9 @@ const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
 		const hasCurrentColor = className.match( colorClassRegex );
 		const currentColorName = hasCurrentColor ? hasCurrentColor[ 1 ] : '';
 		const [ colorState, setColor ] = useState(
-			currentColorName ? `var(--wp--preset--color--${ currentColorName })` : 'var(--wp--preset--color--primary)'
+			currentColorName
+				? `var(--wp--preset--color--${ currentColorName })`
+				: 'var(--wp--preset--color--primary)'
 		);
 		const colorOptions = [
 			{
@@ -83,7 +85,10 @@ const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
 			<Fragment>
 				<BlockEdit { ...props } />
 				<InspectorControls group="styles">
-					<PanelBody title={ __( 'Color', 'banyan' ) } initialOpen={ true }>
+					<PanelBody
+						title={ __( 'Color', 'banyan' ) }
+						initialOpen={ true }
+					>
 						<ColorPalette
 							clearable={ false }
 							disableCustomColors
@@ -92,13 +97,24 @@ const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
 							onChange={ ( color ) => {
 								const colorName = color
 									? colorOptions
-											.find( ( colorOption ) => colorOption.color === color )
+											.find(
+												( colorOption ) =>
+													colorOption.color === color
+											)
 											.name.toLowerCase()
 									: '';
-								const colorClass = colorName ? `is-color-${ colorName }` : '';
-								const hasPreviousColorClass = colorClassRegex.test( className );
+								const colorClass = colorName
+									? `is-color-${ colorName }`
+									: '';
+								const hasPreviousColorClass =
+									colorClassRegex.test( className );
 								const classList = hasPreviousColorClass
-									? className.replace( colorClassRegex, colorClass ).trim()
+									? className
+											.replace(
+												colorClassRegex,
+												colorClass
+											)
+											.trim()
 									: `${ className } ${ colorClass }`.trim();
 
 								setColor( color );
@@ -111,7 +127,10 @@ const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
 						/>
 					</PanelBody>
 
-					<PanelBody title={ __( 'Size', 'banyan' ) } initialOpen={ true }>
+					<PanelBody
+						title={ __( 'Size', 'banyan' ) }
+						initialOpen={ true }
+					>
 						<ToggleGroupControl
 							value={ buttonSize || 'medium' }
 							label={ __( 'Button Size', 'banyan' ) }
@@ -121,10 +140,18 @@ const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
 							__nextHasNoMarginBottom
 							__next40pxDefaultSize
 							onChange={ ( value ) => {
-								const sizeClass = value ? `is-size-${ value }` : '';
-								const hasPreviousSizeClass = sizeClassRegex.test( className );
+								const sizeClass = value
+									? `is-size-${ value }`
+									: '';
+								const hasPreviousSizeClass =
+									sizeClassRegex.test( className );
 								const classList = hasPreviousSizeClass
-									? className.replace( sizeClassRegex, sizeClass ).trim()
+									? className
+											.replace(
+												sizeClassRegex,
+												sizeClass
+											)
+											.trim()
 									: `${ className } ${ sizeClass }`.trim();
 
 								setAttributes( {
@@ -133,11 +160,26 @@ const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
 								} );
 							} }
 						>
-							<ToggleGroupControlOption value="x-small" label={ __( 'XS' ) } />
-							<ToggleGroupControlOption value="small" label={ __( 'S' ) } />
-							<ToggleGroupControlOption value="medium" label={ __( 'M' ) } />
-							<ToggleGroupControlOption value="large" label={ __( 'L' ) } />
-							<ToggleGroupControlOption value="x-large" label={ __( 'XL' ) } />
+							<ToggleGroupControlOption
+								value="x-small"
+								label={ __( 'XS' ) }
+							/>
+							<ToggleGroupControlOption
+								value="small"
+								label={ __( 'S' ) }
+							/>
+							<ToggleGroupControlOption
+								value="medium"
+								label={ __( 'M' ) }
+							/>
+							<ToggleGroupControlOption
+								value="large"
+								label={ __( 'L' ) }
+							/>
+							<ToggleGroupControlOption
+								value="x-large"
+								label={ __( 'XL' ) }
+							/>
 						</ToggleGroupControl>
 					</PanelBody>
 				</InspectorControls>
@@ -146,4 +188,8 @@ const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
 	};
 }, 'withInspectorControl' );
 
-addFilter( 'editor.BlockEdit', 'banyan/button-block/add-inspector-controls', withInspectorControl );
+addFilter(
+	'editor.BlockEdit',
+	'banyan/button-block/add-inspector-controls',
+	withInspectorControl
+);
