@@ -1,8 +1,16 @@
 {
-	"name": "@cassidydc/eslint-wordpress-plugin",
+	"name": "@cassidydc/eslint-plugin-wordpress",
 	"version": "1.0.0",
-	"description": "ESLint flat config plugin for WordPress development.",
+	"description": "ESLint v9+ flat config plugin for WordPress development.",
 	"author": "Jacob Cassidy",
+	"homepage": "https://cassidydc.com",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cassidydc/eslint-plugin-wordpress"
+	},
+	"bugs": {
+		"url": "https://github.com/cassidydc/eslint-plugin-wordpress/issues"
+	},
 	"keywords": [
 		"eslint",
 		"gutenberg",
@@ -29,6 +37,7 @@
 	},
 	"devDependencies": {
 		"jest": "^30.0.5",
+		"markdownlint-cli2": "^0.18.1",
 		"prettier": "npm:wp-prettier@^3.0.3"
 	},
 	"peerDependencies": {
@@ -43,6 +52,8 @@
 		"format": "npx prettier --write",
 		"lint:js": "npx eslint --no-warn-ignored",
 		"lint:js:fix": "npx eslint --no-warn-ignored --fix",
+		"lint:md": "npx markdownlint-cli2 \"**/*.md\"",
+		"lint:md:fix": "npx markdownlint-cli2 \"**/*.md\" --fix",
 		"test": "jest",
 		"test:ref": "jest ./rules/__tests__"
 	}
