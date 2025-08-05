@@ -1,7 +1,7 @@
 {
-	"name": "eslint-wordpress-plugin",
-	"version": "0.1.0",
-	"description": "ESLint plugin for using a flat config for WordPress development.",
+	"name": "@cassidydc/eslint-wordpress-plugin",
+	"version": "1.0.0",
+	"description": "ESLint flat config plugin for WordPress development.",
 	"author": "Jacob Cassidy",
 	"keywords": [
 		"eslint",
@@ -9,11 +9,14 @@
 		"plugin",
 		"wordpress"
 	],
-  "main": "index.js",
 	"dependencies": {
-		"@babel/core": ">=7",
+		"@babel/core": "^7.28.0",
 		"@babel/eslint-parser": "^7.28.0",
+		"@wordpress/babel-preset-default": "^8.27.0",
+		"@wordpress/prettier-config": "^4.27.0",
 		"cosmiconfig": "^9.0.0",
+		"eslint": "^9.32.0",
+		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-import": "^2.32.0",
 		"eslint-plugin-jsdoc": "^52.0.2",
 		"eslint-plugin-jsx-a11y": "^6.10.2",
@@ -22,30 +25,25 @@
 		"eslint-plugin-react-hooks": "^5.2.0",
 		"globals": "^16.3.0",
 		"requireindex": "^1.2.0",
-		"typescript-eslint": "^8.38.0"
+		"typescript-eslint": "^8.39.0"
 	},
 	"devDependencies": {
-		"@babel/preset-env": "^7.28.0",
-		"@babel/preset-react": "^7.27.1",
-		"@wordpress/prettier-config": "^4.27.0",
 		"jest": "^30.0.5",
 		"prettier": "npm:wp-prettier@^3.0.3"
 	},
 	"peerDependencies": {
-		"@babel/core": ">=7",
-		"@eslint/js": "^=9",
-		"@wordpress/prettier-config": "^=4",
-		"eslint": ">=9",
-		"eslint-config-prettier": "^=10",
+		"@eslint/js": ">=9",
 		"prettier": ">=3",
 		"typescript": ">=5"
+	},
+	"overrides": {
+		"@babel/runtime": "^7.28.2"
 	},
 	"scripts": {
 		"format": "npx prettier --write",
 		"lint:js": "npx eslint --no-warn-ignored",
 		"lint:js:fix": "npx eslint --no-warn-ignored --fix",
 		"test": "jest",
-		"test:ref": "jest ./rules/__tests__",
-		"test:watch": "jest --watch"
+		"test:ref": "jest ./rules/__tests__"
 	}
 }
