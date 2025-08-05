@@ -1,7 +1,6 @@
 // import { defineConfig } from 'eslint/config';
-import globals from 'globals';
 import js from '@eslint/js';
-import babelParser from '@babel/eslint-parser';
+import globals from 'globals';
 import wordPress from './configs/flat/recommended.js';
 
 export default [
@@ -11,18 +10,8 @@ export default [
 		ignores: [ '**/.dev-assets/', '**/*.min.js' ],
 	},
 	{
-		files: [ '**/*.js' ],
+		files: [ '**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}' ],
 		languageOptions: {
-			parser: babelParser,
-			parserOptions: {
-				requireConfigFile: false,
-				babelOptions: {
-					presets: [ '@babel/preset-react' ],
-				},
-				ecmaFeatures: {
-					jsx: true,
-				},
-			},
 			globals: {
 				...globals.browser,
 				...globals.jest,
