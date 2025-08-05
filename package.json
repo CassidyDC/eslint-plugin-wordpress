@@ -65,6 +65,9 @@
 	"overrides": {
 		"@babel/runtime": "^7.28.2"
 	},
+  "publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
 		"format": "npx prettier --write",
 		"lint:js": "npx eslint --no-warn-ignored",
