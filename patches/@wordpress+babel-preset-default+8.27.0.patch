@@ -1,0 +1,29 @@
+diff --git a/node_modules/@wordpress/babel-preset-default/package.json b/node_modules/@wordpress/babel-preset-default/package.json
+index e25aa8b..8da3ab0 100644
+--- a/node_modules/@wordpress/babel-preset-default/package.json
++++ b/node_modules/@wordpress/babel-preset-default/package.json
+@@ -32,17 +32,17 @@
+ 	],
+ 	"main": "index.js",
+ 	"dependencies": {
+-		"@babel/core": "7.25.7",
+-		"@babel/plugin-transform-react-jsx": "7.25.7",
+-		"@babel/plugin-transform-runtime": "7.25.7",
+-		"@babel/preset-env": "7.25.7",
+-		"@babel/preset-typescript": "7.25.7",
+-		"@babel/runtime": "7.25.7",
++		"@babel/core": "7.28.0",
++		"@babel/plugin-transform-react-jsx": "7.27.1",
++		"@babel/plugin-transform-runtime": "7.28.0",
++		"@babel/preset-env": "7.28.0",
++		"@babel/preset-typescript": "7.27.1",
++		"@babel/runtime": "7.28.2",
+ 		"@wordpress/browserslist-config": "^6.27.0",
+ 		"@wordpress/warning": "^3.27.0",
+ 		"browserslist": "^4.21.10",
+ 		"core-js": "^3.31.0",
+-		"react": "^18.3.0"
++		"react": "^18.3.1"
+ 	},
+ 	"publishConfig": {
+ 		"access": "public"
