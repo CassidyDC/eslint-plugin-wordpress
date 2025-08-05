@@ -1,9 +1,16 @@
 {
 	"name": "@cassidydc/eslint-plugin-wordpress",
 	"version": "1.0.0",
-	"description": "ESLint v9+ flat config plugin for WordPress development.",
+	"description": "ESLint plugin for using a modern flat config in WordPress development.",
 	"author": "Jacob Cassidy",
-	"homepage": "https://cassidydc.com",
+  "license": "GPL-2.0-or-later",
+	"keywords": [
+		"eslint",
+		"gutenberg",
+		"plugin",
+		"wordpress"
+	],
+  "homepage": "https://cassidydc.com",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/cassidydc/eslint-plugin-wordpress"
@@ -11,12 +18,14 @@
 	"bugs": {
 		"url": "https://github.com/cassidydc/eslint-plugin-wordpress/issues"
 	},
-	"keywords": [
-		"eslint",
-		"gutenberg",
-		"plugin",
-		"wordpress"
+  "files": [
+		"configs",
+		"rules",
+		"utils",
+		"index.js",
+		"plugin.js"
 	],
+  "main": "index.js",
 	"dependencies": {
 		"@babel/core": "^7.28.0",
 		"@babel/eslint-parser": "^7.28.0",
@@ -44,6 +53,14 @@
 		"@eslint/js": ">=9",
 		"prettier": ">=3",
 		"typescript": ">=5"
+	},
+  "peerDependenciesMeta": {
+		"prettier": {
+			"optional": true
+		},
+		"typescript": {
+			"optional": true
+		}
 	},
 	"overrides": {
 		"@babel/runtime": "^7.28.2"
