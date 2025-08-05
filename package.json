@@ -63,7 +63,9 @@
 		}
 	},
 	"overrides": {
-		"@babel/runtime": "^7.28.2"
+    "@wordpress/babel-preset-default": {
+      "@babel/runtime": "^7.28.2"
+    }
 	},
   "publishConfig": {
 		"access": "public"
