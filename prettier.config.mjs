@@ -8,7 +8,6 @@ import wpConfig from '@wordpress/prettier-config';
 
 const config = {
 	...wpConfig,
-	printWidth: 120,
 };
 
 export default config;
