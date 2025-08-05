@@ -33,4 +33,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   Replaced code syntax yoda conditions with non-yoda conditions.
 -   Replaced instances of `parserOptions` with `languageOptions` to modernize Jest tests.
--   Updated  `./configs/flat/*`, `./rules/*`, `./utils/*`, `index.js` files with [Gutenberg PR 65648 - Upgrade ESLint to v9](https://github.com/WordPress/gutenberg/pull/65648) for converting rules to use ESLint 9+ flat syntax.
+-   Updated `./configs/flat/*`, `./rules/*`, `./utils/*`, `index.js` files with [Gutenberg PR 65648 - Upgrade ESLint to v9](https://github.com/WordPress/gutenberg/pull/65648) for converting rules to use ESLint 9+ flat syntax.
