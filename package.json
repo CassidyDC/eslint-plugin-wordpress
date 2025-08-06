@@ -1,6 +1,6 @@
 {
 	"name": "@cassidydc/eslint-plugin-wordpress",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "ESLint plugin for using a modern flat config in WordPress development.",
 	"author": "Jacob Cassidy",
 	"license": "GPL-2.0-or-later",
@@ -22,12 +22,12 @@
 		"configs",
 		"patches",
 		"rules/",
-    "!rules/__tests__",
+		"!rules/__tests__",
 		"utils",
-    "CHANGELOG.md",
+		"CHANGELOG.md",
 		"index.js",
 		"plugin.js",
-    "README.md"
+		"README.md"
 	],
 	"main": "index.js",
 	"dependencies": {
@@ -49,6 +49,7 @@
 		"eslint-plugin-react-hooks": "^5.2.0",
 		"globals": "^16.3.0",
 		"patch-package": "^8.0.0",
+		"postinstall-postinstall": "^2.1.0",
 		"requireindex": "^1.2.0",
 		"typescript-eslint": "^8.39.0"
 	},
@@ -70,17 +71,12 @@
 			"optional": true
 		}
 	},
-	"overrides": {
-		"@wordpress/babel-preset-default": {
-			"@babel/core": "7.28.0",
-			"@babel/runtime": "7.28.2"
-		}
-	},
 	"publishConfig": {
 		"access": "public"
 	},
 	"scripts": {
 		"postinstall": "patch-package",
+    "postinstall-postinstall": "patch-package",
 		"format": "npx prettier --write",
 		"lint:js": "npx eslint --no-warn-ignored",
 		"lint:js:fix": "npx eslint --no-warn-ignored --fix",
