@@ -1,3 +1,9 @@
+/**
+ * ESLint flat configuration.
+ * @see https://eslint.org/docs/latest/use/configure/configuration-files-new
+ * @type {import("eslint").Linter.Config[]}
+ */
+
 import js from '@eslint/js';
 import globals from 'globals';
 import wordpress from './configs/flat/recommended.js';
@@ -14,7 +20,6 @@ export default [
 			globals: {
 				...globals.browser,
 				...globals.jest,
-				Splide: 'readonly',
 			},
 		},
 		rules: {
