@@ -77,29 +77,40 @@ The following example files should be placed in your project's root directory.
  * @type {import("eslint").Linter.Config[]}
  */
 
-import js from '@eslint/js';
 import globals from 'globals';
-import wordpress from '@cassidydc/eslint-plugin-wordpress';
+import importPlugin from 'eslint-plugin-import';
+import js from '@eslint/js';
+import wordpressPlugin from '@cassidydc/eslint-plugin-wordpress';
+import { defineConfig, globalIgnores } from 'eslint/config';
 
-export default [
-	js.configs.recommended,
-	wordpress.configs.flat.recommended,
+export default defineConfig( [
+	globalIgnores( [ '**/.dev-assets/', '**/*.min.js' ] ),
 	{
-		ignores: [ '**/.dev-assets/', '**/*.min.js' ],
-	},
-	{
+		plugins: {
+			importPlugin,
+			js,
+			wordpressPlugin,
+		},
+		extends: [ 'wordpressPlugin/recommended', 'js/recommended' ],
 		files: [ '**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}' ],
 		languageOptions: {
 			globals: {
 				...globals.browser,
 			},
 		},
+		linterOptions: {
+			reportUnusedInlineConfigs: 'warn',
+		},
 		rules: {
 			'no-unused-vars': 'warn',
 			yoda: [ 'warn', 'never' ],
 		},
+		settings: {
+			// Tell eslint-plugin-import that "eslint/config" is a core module
+			'import/core-modules': [ 'eslint/config' ],
+		},
 	},
-];
+] );
 ```
 
 ### Example `prettier.config.js` file
