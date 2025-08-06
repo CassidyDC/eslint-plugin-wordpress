@@ -1,10 +1,10 @@
 import js from '@eslint/js';
 import globals from 'globals';
-import wordPress from './configs/flat/recommended.js';
+import wordpress from './configs/flat/recommended.js';
 
 export default [
 	js.configs.recommended,
-	...wordPress,
+	...wordpress,
 	{
 		ignores: [ '**/.dev-assets/', '**/*.min.js' ],
 	},
