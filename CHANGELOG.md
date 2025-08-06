@@ -3,7 +3,18 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).c
+
+## [1.1.0] - 2025-08-06
+
+### Changed
+
+- Updated example eslint.config.js code in README.md.
+- Updated config object in `./index.js` to point to flat directory.
+
+### Removed
+
+-   Removed `./configs/index.js` since it's not needed after update to `./index.js`
 
 ## [1.0.9] - 2025-08-06
 
