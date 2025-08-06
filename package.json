@@ -10,7 +10,7 @@
 		"plugin",
 		"wordpress"
 	],
-	"homepage": "https://cassidydc.com",
+	"homepage": "https://github.com/CassidyDC/eslint-plugin-wordpress/blob/main/README.md",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/cassidydc/eslint-plugin-wordpress.git"
@@ -78,7 +78,7 @@
 		"access": "public"
 	},
 	"scripts": {
-		"format": "npx prettier --write",
+		"format": "npx prettier . --write",
 		"lint:js": "npx eslint --no-warn-ignored",
 		"lint:js:fix": "npx eslint --no-warn-ignored --fix",
 		"lint:md": "npx markdownlint-cli2 \"**/*.md\"",
