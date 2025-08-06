@@ -1,9 +1,4 @@
 .dev-assets
+node_modules
 vendor
 package-lock.json
-
-/node_modules/*
-!/node_modules/@wordpress
-/node_modules/@wordpress/*
-!/node_modules/@wordpress/babel-preset-default
-/node_modules/**/node_modules
