@@ -3,6 +3,6 @@
  */
 const plugin = require( './plugin' );
 
-Object.assign( plugin.configs, require( './configs' ) );
+Object.assign( plugin.configs, require( './configs/flat' ) );
 
 module.exports = plugin;
