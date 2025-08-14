@@ -62,8 +62,8 @@ The following example files should be placed in your project's root directory.
 	},
 	"scripts": {
 		"format": "npx prettier . --write",
-		"lint:js": "npx eslint --no-warn-ignored",
-		"lint:js:fix": "npx eslint --no-warn-ignored --fix"
+		"lint:scripts": "npx eslint",
+		"lint:scripts:fix": "npx eslint --fix"
 	}
 }
 ```
@@ -72,42 +72,60 @@ The following example files should be placed in your project's root directory.
 
 ```js
 /**
- * ESLint flat configuration.
+ * ESLint configuration.
+ *
+ * @file Manages the flat configuration settings for ESLint
+ * @author Jacob Cassidy <jacob@cassidydc.com>
  * @see https://eslint.org/docs/latest/use/configure/configuration-files
  * @type {import("eslint").Linter.Config[]}
+ * @version 1.0.0
  */
 
+'use strict';
+
 import globals from 'globals';
-import importPlugin from 'eslint-plugin-import';
 import js from '@eslint/js';
-import wordpressPlugin from '@cassidydc/eslint-plugin-wordpress';
+import tseslint from 'typescript-eslint';
+import wordpress from './index.js';
 import { defineConfig, globalIgnores } from 'eslint/config';
+import { importX } from 'eslint-plugin-import-x';
 
 export default defineConfig( [
-	globalIgnores( [ '**/.dev-assets/', '**/*.min.js' ] ),
+	globalIgnores( [
+		'**/.dev-assets/',
+		'**/build/',
+		'**/vendor/',
+		'**/*.min.js',
+	] ),
 	{
 		plugins: {
-			importPlugin,
+			'import-x': importX,
 			js,
-			wordpressPlugin,
+			tseslint,
+			wordpress,
 		},
-		extends: [ 'wordpressPlugin/recommended', 'js/recommended' ],
+		extends: [
+			'js/recommended',
+			'tseslint/recommended',
+			'wordpress/recommended',
+			'import-x/recommended',
+		],
 		files: [ '**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}' ],
 		languageOptions: {
+			ecmaVersion: 'latest',
+			sourceType: 'module',
 			globals: {
 				...globals.browser,
+				...globals.jest,
 			},
 		},
 		linterOptions: {
 			reportUnusedInlineConfigs: 'warn',
 		},
 		rules: {
+			'@typescript-eslint/no-require-imports': 'warn',
 			'no-unused-vars': 'warn',
 			yoda: [ 'warn', 'never' ],
-		},
-		settings: {
-			// Tell eslint-plugin-import that "eslint/config" is a core module
-			'import/core-modules': [ 'eslint/config' ],
 		},
 	},
 ] );
