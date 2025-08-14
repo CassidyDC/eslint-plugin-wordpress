@@ -4,13 +4,13 @@
 		"default": true,
 		"heading-style": { "style": "atx" },
 		"line-length": { "line_length": 9999 },
-		"list-marker-space": { "ul_single": 3, "ul_multi": 3 },
 		"no-duplicate-heading": { "siblings_only": true },
 		"no-hard-tabs": false,
 		"ol-prefix": { "style": "ordered" },
-		"ul-indent": { "indent": 4 }
+		"ul-indent": { "indent": 4 },
+    "whitespace": false
 	},
-	"ignores": [ ".git", ".github", "node_modules", "vendor" ],
+	"ignores": [ "node_modules", "vendor" ],
 	"gitignore": true,
 	"showFound": true
 }
