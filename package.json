@@ -84,9 +84,9 @@
 		"format": "npx prettier . --write",
 		"lint:docs": "npx markdownlint-cli2 \"**/*.md\"",
 		"lint:docs:fix": "npx markdownlint-cli2 \"**/*.md\" --fix",
-		"lint:scripts": "npx eslint --no-warn-ignored",
-		"lint:scripts:fix": "npx eslint --no-warn-ignored --fix",
-		"test": "jest",
-		"test:ref": "jest ./rules/__tests__"
+		"lint:scripts": "npx eslint",
+		"lint:scripts:fix": "npx eslint --fix",
+		"test": "node --experimental-vm-modules node_modules/.bin/jest",
+		"test:ref": "node --experimental-vm-modules node_modules/.bin/jest ./rules/__tests__"
 	}
 }
