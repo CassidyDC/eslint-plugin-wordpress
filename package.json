@@ -2,8 +2,6 @@
 	"name": "@cassidydc/eslint-plugin-wordpress",
 	"version": "1.1.2",
 	"description": "ESLint plugin for using a modern flat config in WordPress development.",
-	"author": "Jacob Cassidy",
-	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"eslint",
 		"gutenberg",
@@ -11,6 +9,14 @@
 		"wordpress"
 	],
 	"homepage": "https://github.com/CassidyDC/eslint-plugin-wordpress/blob/main/README.md",
+	"author": {
+		"name": "Jacob Cassidy",
+		"email": "jacob@cassidydc.com",
+		"url": "https://cassidydc.com"
+	},
+	"license": "GPL-2.0-or-later",
+	"main": "index.js",
+	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/cassidydc/eslint-plugin-wordpress.git"
@@ -30,7 +36,6 @@
 		"plugin.js",
 		"README.md"
 	],
-	"main": "index.js",
 	"types": "index.d.ts",
 	"dependencies": {
 		"@babel/eslint-parser": "^7.28.0",
@@ -56,7 +61,7 @@
 		"jest": "^30.0.5",
 		"markdownlint-cli2": "^0.18.1",
 		"prettier": "npm:wp-prettier@^3.0.3",
-    "prettier-plugin-multiline-arrays": "^4.0.3"
+		"prettier-plugin-multiline-arrays": "^4.0.3"
 	},
 	"overrides": {
 		"@wordpress/babel-preset-default": {
