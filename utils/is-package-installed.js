@@ -4,13 +4,14 @@
  * @param {string} packageName The name of npm package.
  * @return {boolean} Returns true when the package is installed or false otherwise.
  */
-const isPackageInstalled = ( packageName ) => {
+export const isPackageInstalled = ( packageName ) => {
 	try {
-		if ( require.resolve( packageName ) ) {
+		if ( import.meta.resolve( packageName ) ) {
 			return true;
 		}
-	} catch ( error ) {}
+	} catch ( error ) {
+		// Package not found
+	}
+
 	return false;
 };
-
-module.exports = isPackageInstalled;

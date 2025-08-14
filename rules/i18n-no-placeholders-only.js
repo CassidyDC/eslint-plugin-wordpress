@@ -1,15 +1,15 @@
 /**
  * Internal dependencies
  */
-const {
+import {
 	TRANSLATION_FUNCTIONS,
 	REGEXP_SPRINTF_PLACEHOLDER,
 	getTextContentFromNode,
 	getTranslateFunctionName,
 	getTranslateFunctionArgs,
-} = require( '../utils' );
+} from '../utils/index.js';
 
-module.exports = {
+export default {
 	meta: {
 		type: 'problem',
 		schema: [],

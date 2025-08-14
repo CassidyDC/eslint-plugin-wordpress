@@ -1,10 +1,10 @@
 /**
  * Internal dependencies
  */
-const {
+import {
 	TRANSLATION_FUNCTIONS,
 	getTranslateFunctionName,
-} = require( '../utils' );
+} from '../utils/index.js';
 
 /**
  * Returns the text domain passed to the given translation function.
@@ -28,7 +28,7 @@ function getTextDomain( functionName, args ) {
 	}
 }
 
-module.exports = {
+export default {
 	meta: {
 		type: 'problem',
 		schema: [

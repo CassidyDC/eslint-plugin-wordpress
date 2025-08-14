@@ -1,8 +1,10 @@
-module.exports = [
+import wordpressPlugin from '../../plugin.js';
+
+export default [
 	{
 		name: '@wordpress/custom/common',
 		plugins: {
-			'@wordpress': require( '../../plugin' ),
+			'@wordpress': wordpressPlugin,
 		},
 		rules: {
 			'@wordpress/no-unused-vars-before-return': 'error',

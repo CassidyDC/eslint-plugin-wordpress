@@ -12,6 +12,4 @@ function getTranslateFunctionName( callee ) {
 		: callee.name;
 }
 
-module.exports = {
-	getTranslateFunctionName,
-};
+export { getTranslateFunctionName };

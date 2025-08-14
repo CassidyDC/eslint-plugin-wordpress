@@ -1,1 +1,13 @@
-module.exports = require( 'requireindex' )( __dirname );
+export { default as custom } from './custom.js';
+export { default as es5 } from './es5.js';
+export { default as esnext } from './esnext.js';
+export { default as i18n } from './i18n.js';
+export { default as jsdoc } from './jsdoc.js';
+export { default as jshint } from './jshint.js';
+export { default as jsxA11y } from './jsx-a11y.js';
+export { default as react } from './react.js';
+export { default as recommended } from './recommended.js';
+export { default as recommendedWithFormatting } from './recommended-with-formatting.js';
+export { default as testE2e } from './test-e2e.js';
+export { default as testPlaywright } from './test-playwright.js';
+export { default as testUnit } from './test-unit.js';

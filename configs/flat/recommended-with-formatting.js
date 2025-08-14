@@ -1,18 +1,27 @@
 /**
  * External dependencies
  */
-const globals = require( 'globals' );
-const importPlugin = require( 'eslint-plugin-import' );
+import globals from 'globals';
+import importPlugin from 'eslint-plugin-import';
+
+/**
+ * Internal dependencies
+ */
+import jsxA11y from './jsx-a11y.js';
+import custom from './custom.js';
+import react from './react.js';
+import esnext from './esnext.js';
+import i18n from './i18n.js';
 
 // Exclude bundled WordPress packages from the list.
 const wpPackagesRegExp = '^@wordpress/(?!(icons|interface|style-engine))';
 
 const config = [
-	...require( './jsx-a11y.js' ),
-	...require( './custom.js' ),
-	...require( './react.js' ),
-	...require( './esnext.js' ),
-	require( './i18n.js' ),
+	...jsxA11y,
+	...custom,
+	...react,
+	...esnext,
+	i18n,
 	{
 		name: '@wordpress/formatting',
 		plugins: { import: importPlugin },
@@ -48,4 +57,4 @@ const config = [
 	},
 ];
 
-module.exports = config;
+export default config;

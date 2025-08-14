@@ -1,12 +1,12 @@
 /**
  * Internal dependencies
  */
-const {
+import {
 	TRANSLATION_FUNCTIONS,
 	getTextContentFromNode,
 	getTranslateFunctionName,
 	getTranslateFunctionArgs,
-} = require( '../utils' );
+} from '../utils/index.js';
 
 const THREE_DOTS = '...';
 const ELLIPSIS = '…';
@@ -52,7 +52,7 @@ function makeFixerFunction( arg ) {
 	};
 }
 
-module.exports = {
+export default {
 	meta: {
 		type: 'problem',
 		schema: [],

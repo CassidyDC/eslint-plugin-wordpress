@@ -1,7 +1,7 @@
 /**
  * Internal dependencies
  */
-import isPackageInstalled from '../is-package-installed';
+import { isPackageInstalled } from '../is-package-installed';
 
 describe( 'isPackageInstalled', () => {
 	test( 'returns false when package not installed', () => {

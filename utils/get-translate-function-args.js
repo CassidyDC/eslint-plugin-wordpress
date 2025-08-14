@@ -35,6 +35,4 @@ function getTranslateFunctionArgs( functionName, args, includeContext = true ) {
 	}
 }
 
-module.exports = {
-	getTranslateFunctionArgs,
-};
+export { getTranslateFunctionArgs };

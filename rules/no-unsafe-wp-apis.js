@@ -1,5 +1,5 @@
 /** @type {import('eslint').Rule.RuleModule} */
-module.exports = {
+export default {
 	type: 'problem',
 	meta: {
 		schema: [

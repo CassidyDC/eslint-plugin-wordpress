@@ -55,7 +55,7 @@ const REGEXP_SPRINTF_PLACEHOLDER =
 const REGEXP_SPRINTF_PLACEHOLDER_UNORDERED =
 	/(?:(?<!%)%[+-]?(?:(?:0|'.)?-?[0-9]*(?:\.(?:[ 0]|'.)?[0-9]+)?|(?:[ ])?-?[0-9]+(?:\.(?:[ 0]|'.)?[0-9]+)?)[bcdeEfFgGosuxX])/;
 
-module.exports = {
+export {
 	TRANSLATION_FUNCTIONS,
 	REGEXP_SPRINTF_PLACEHOLDER,
 	REGEXP_SPRINTF_PLACEHOLDER_UNORDERED,

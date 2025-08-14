@@ -2,11 +2,11 @@
 /** @typedef {import('estree').Node} Node */
 
 /** @type {import('eslint').Rule.RuleModule} */
-module.exports = {
+export default {
 	meta: {
 		type: 'layout',
 		docs: {
-			description: 'Enforce dependencies docblocks formatting',
+			description: 'Enforce dependencies DocBlock formatting',
 			url: 'https://github.com/WordPress/gutenberg/blob/HEAD/packages/eslint-plugin/docs/rules/dependency-group.md',
 		},
 		schema: [],

@@ -1,5 +1,7 @@
-module.exports = [
-	...require( './jsdoc.js' ),
+import jsdoc from './jsdoc.js';
+
+export default [
+	...jsdoc,
 	{
 		name: '@wordpress/es5',
 		rules: {

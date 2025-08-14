@@ -1,12 +1,12 @@
 /**
  * Internal dependencies
  */
-const {
+import {
 	TRANSLATION_FUNCTIONS,
 	getTextContentFromNode,
 	getTranslateFunctionName,
 	getTranslateFunctionArgs,
-} = require( '../utils' );
+} from '../utils/index.js';
 
 const PROBLEMS_BY_CHAR_CODE = {
 	9: '\\t',
@@ -15,7 +15,7 @@ const PROBLEMS_BY_CHAR_CODE = {
 	32: 'consecutive spaces',
 };
 
-module.exports = {
+export default {
 	meta: {
 		type: 'problem',
 		schema: [],

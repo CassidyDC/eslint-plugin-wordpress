@@ -1,8 +1,8 @@
 /**
  * External dependencies
  */
-const globals = require( 'globals' );
-const jsdoc = require( 'eslint-plugin-jsdoc' );
+import globals from 'globals';
+import jsdoc from 'eslint-plugin-jsdoc';
 
 /**
  * The temporary list of types defined in Gutenberg which are allowed to avoid
@@ -72,7 +72,7 @@ const typescriptUtilityTypes = [
 	'false',
 ];
 
-module.exports = [
+export default [
 	jsdoc.configs[ 'flat/recommended' ],
 	{
 		name: '@wordpress/jsdoc',

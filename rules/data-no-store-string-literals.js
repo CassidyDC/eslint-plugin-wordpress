@@ -1,6 +1,6 @@
 /**
  * Converts store name to variable name.
- * Removes dashes and uppercases the characters after dashes and appends `Store` at the end.
+ * Removes dashes and uppercase the characters after dashes and appends `Store` at the end.
  *
  * @param {string} storeName
  * @return {string} store name as variable name
@@ -196,7 +196,7 @@ function getFixes( fixer, context, callNode ) {
 	return fixes;
 }
 
-module.exports = {
+export default {
 	meta: {
 		type: 'problem',
 		hasSuggestions: true,

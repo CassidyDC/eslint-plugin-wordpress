@@ -28,7 +28,7 @@ function getClosestFunctionScope( context, node ) {
 	return functionScope;
 }
 
-module.exports = /** @type {import('eslint').Rule} */ ( {
+export default /** @type {import('eslint').Rule} */ ( {
 	meta: {
 		type: 'problem',
 		schema: [
@@ -59,7 +59,7 @@ module.exports = /** @type {import('eslint').Rule} */ ( {
 		 *
 		 * @param {Object} node Node to test.
 		 *
-		 * @return {boolean} Whether declarator is emempt from consideration.
+		 * @return {boolean} Whether declarator is exempt from consideration.
 		 */
 		function isExemptObjectDestructureDeclarator( node ) {
 			return (

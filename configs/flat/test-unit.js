@@ -1,9 +1,9 @@
 /**
  * External dependencies
  */
-const jest = require( 'eslint-plugin-jest' );
+import jest from 'eslint-plugin-jest';
 
-module.exports = [
+export default [
 	jest.configs[ 'flat/recommended' ],
 	{
 		name: '@wordpress/test-unit',

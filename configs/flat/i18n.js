@@ -1,7 +1,9 @@
-module.exports = {
+import wordpressPlugin from '../../plugin.js';
+
+export default {
 	name: '@wordpress/i18n',
 	plugins: {
-		'@wordpress': require( '../../plugin' ),
+		'@wordpress': wordpressPlugin,
 	},
 	rules: {
 		'@wordpress/valid-sprintf': 'error',
