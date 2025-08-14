@@ -2,7 +2,7 @@
  * External dependencies
  */
 import globals from 'globals';
-import importPlugin from 'eslint-plugin-import';
+import importXPlugin from 'eslint-plugin-import-x';
 
 /**
  * Internal dependencies
@@ -24,7 +24,7 @@ const config = [
 	i18n,
 	{
 		name: '@wordpress/formatting',
-		plugins: { import: importPlugin },
+		plugins: { import: importXPlugin },
 		languageOptions: {
 			globals: {
 				...globals.node,
@@ -35,24 +35,24 @@ const config = [
 			},
 		},
 		settings: {
-			'import/internal-regex': wpPackagesRegExp,
-			'import/extensions': [ '.js', '.jsx' ],
+			'import-x/internal-regex': wpPackagesRegExp,
+			'import-x/extensions': [ '.js', '.jsx' ],
 		},
 		rules: {
-			'import/no-extraneous-dependencies': [
+			'import-x/no-extraneous-dependencies': [
 				'error',
 				{
 					peerDependencies: true,
 				},
 			],
-			'import/no-unresolved': [
+			'import-x/no-unresolved': [
 				'error',
 				{
 					ignore: [ wpPackagesRegExp ],
 				},
 			],
-			'import/default': 'warn',
-			'import/named': 'warn',
+			'import-x/default': 'warn',
+			'import-x/named': 'warn',
 		},
 	},
 ];

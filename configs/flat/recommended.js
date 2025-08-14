@@ -24,7 +24,7 @@ if ( isPackageInstalled( 'typescript' ) ) {
 		extends: [ tseslint.configs.base, tseslint.configs.eslintRecommended ],
 		files: [ '**/*.ts', '**/*.tsx' ],
 		settings: {
-			'import/resolver': {
+			'import-x/resolver': {
 				node: {
 					extensions: [ '.js', '.jsx', '.ts', '.tsx' ],
 				},
@@ -32,7 +32,7 @@ if ( isPackageInstalled( 'typescript' ) ) {
 		},
 		rules: {
 			'no-duplicate-imports': 'off',
-			'import/no-duplicates': 'error',
+			'import-x/no-duplicates': 'error',
 			// Don't require redundant JSDoc types in TypeScript files.
 			'jsdoc/require-param-type': 'off',
 			'jsdoc/require-returns-type': 'off',
