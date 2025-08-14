@@ -55,7 +55,8 @@
 	"devDependencies": {
 		"jest": "^30.0.5",
 		"markdownlint-cli2": "^0.18.1",
-		"prettier": "npm:wp-prettier@^3.0.3"
+		"prettier": "npm:wp-prettier@^3.0.3",
+    "prettier-plugin-multiline-arrays": "^4.0.3"
 	},
 	"overrides": {
 		"@wordpress/babel-preset-default": {
