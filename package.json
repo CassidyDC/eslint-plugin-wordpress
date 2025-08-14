@@ -36,22 +36,22 @@
 		"@babel/core": "^7.28.0",
 		"@babel/eslint-parser": "^7.28.0",
 		"@babel/runtime": "^7.28.2",
-		"@wordpress/babel-preset-default": "^8.27.0",
-		"@wordpress/prettier-config": "^4.27.0",
+		"@wordpress/babel-preset-default": "^8.28.0",
+		"@wordpress/prettier-config": "^4.28.0",
 		"cosmiconfig": "^9.0.0",
-		"eslint": "^9.32.0",
+		"eslint": "^9.33.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-import": "^2.32.0",
 		"eslint-plugin-jest": "^29.0.1",
-		"eslint-plugin-jsdoc": "^52.0.2",
+		"eslint-plugin-jsdoc": "^54.0.0",
 		"eslint-plugin-jsx-a11y": "^6.10.2",
 		"eslint-plugin-playwright": "^2.2.2",
-		"eslint-plugin-prettier": "^5.5.3",
+		"eslint-plugin-prettier": "^5.5.4",
 		"eslint-plugin-react": "^7.37.5",
 		"eslint-plugin-react-hooks": "^5.2.0",
 		"globals": "^16.3.0",
 		"requireindex": "^1.2.0",
-		"typescript-eslint": "^8.39.0"
+		"typescript-eslint": "^8.39.1"
 	},
 	"devDependencies": {
 		"jest": "^30.0.5",
@@ -81,10 +81,10 @@
 	},
 	"scripts": {
 		"format": "npx prettier . --write",
-		"lint:js": "npx eslint --no-warn-ignored",
-		"lint:js:fix": "npx eslint --no-warn-ignored --fix",
-		"lint:md": "npx markdownlint-cli2 \"**/*.md\"",
-		"lint:md:fix": "npx markdownlint-cli2 \"**/*.md\" --fix",
+		"lint:docs": "npx markdownlint-cli2 \"**/*.md\"",
+		"lint:docs:fix": "npx markdownlint-cli2 \"**/*.md\" --fix",
+		"lint:scripts": "npx eslint --no-warn-ignored",
+		"lint:scripts:fix": "npx eslint --no-warn-ignored --fix",
 		"test": "jest",
 		"test:ref": "jest ./rules/__tests__"
 	}
