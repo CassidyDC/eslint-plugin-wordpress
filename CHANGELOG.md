@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2025-08-15
+
+This version refactors all CommonJS files in this plugin to to ECMAScript Modules.
+
+### Added
+
+-   Added `espree.Node` to the temporaryExternalTypes array in `configs/flat/jsdocs.js` to fix the type error.
+-   Added `prettier-plugin-multiline-arrays` devDep package and prettier config rules.
+-   Added braces to create a new block scope in switch cases to prevent variable name conflicts.
+
+### Changed
+
+-   Converted CommonJS files ported from `@wordpress/eslint-plugin` to ECMAScript Modules.
+-   Refactored `eslint.config.js` and `prettier.config.js` files.
+-   Replaced type `any` with `ESLint.Plugin` in `index.d.ts`.
+-   Replaced `eslint-plugin-import` package with `eslint-plugin-import-x` for better ESM support.
+-   Replaced `list-marker-space` rule with `whitespace` in `.markdownlint-cli2.jsonc`.
+-   Updated example files and details in `README.md`.
+-   Updated npm scripts for Jest with ESM flags.
+
+### Removed
+
+-   Removed `@babel/core` and `@babel/runtime` from package.json dependencies.
+-   Removed unused parameter from catch block in `utils/is-package-installed.js`.
+
 ## [1.1.2] - 2025-08-07
 
 ### Added
