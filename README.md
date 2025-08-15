@@ -28,7 +28,7 @@ WordPress's packages are often slow to update dependencies due to their intercon
 
 If you encounter an outdated or vulnerable dependency in a WordPress package, you can use the `overrides` field in your project's root `package.json` to specify a patched version.
 
-For example, at the time of writing, `@wordpress/babel-preset-default` depended on an older version of `@babel/runtime` (v7.25.7) with a security issue. To ensure your project uses a secure version, add an override like this:
+For example, at the time of writing, `@wordpress/babel-preset-default` depended on an older version of `@babel/runtime` (v7.25.7) that contains a security issue. To ensure your project uses a secure version, add an override such as this:
 
 ```json
 {
@@ -73,12 +73,8 @@ The following example files should be placed in your project's root directory.
 ```js
 /**
  * ESLint configuration.
- *
- * @file Manages the flat configuration settings for ESLint
- * @author Jacob Cassidy <jacob@cassidydc.com>
  * @see https://eslint.org/docs/latest/use/configure/configuration-files
  * @type {import("eslint").Linter.Config[]}
- * @version 1.0.0
  */
 
 'use strict';
@@ -86,7 +82,7 @@ The following example files should be placed in your project's root directory.
 import globals from 'globals';
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import wordpress from './index.js';
+import wordpress from '@cassidydc/eslint-plugin-wordpress';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import { importX } from 'eslint-plugin-import-x';
 
@@ -105,18 +101,15 @@ export default defineConfig( [
 			wordpress,
 		},
 		extends: [
+			'import-x/recommended',
 			'js/recommended',
 			'tseslint/recommended',
 			'wordpress/recommended',
-			'import-x/recommended',
 		],
 		files: [ '**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}' ],
 		languageOptions: {
-			ecmaVersion: 'latest',
-			sourceType: 'module',
 			globals: {
 				...globals.browser,
-				...globals.jest,
 			},
 		},
 		linterOptions: {
@@ -140,10 +133,28 @@ export default defineConfig( [
  * @type {import("prettier").Config}
  */
 
+'use strict';
+
 import wpConfig from '@wordpress/prettier-config';
 
 const config = {
 	...wpConfig,
+	plugins: [ 'prettier-plugin-multiline-arrays' ],
+	overrides: [
+		...wpConfig.overrides,
+		{
+			files: '*.{css,sass,scss}',
+			options: {
+				printWidth: 600, // To not break long selector combinations
+			},
+		},
+		{
+			files: [ '*.json', '*.jsonc' ],
+			options: {
+				multilineArraysWrapThreshold: 0,
+			},
+		},
+	],
 };
 
 export default config;
@@ -153,9 +164,11 @@ export default config;
 
 You can then use the following scripts from your command line:
 
--   `npm run format` - Formats all your files with Prettier.
--   `npm run lint:js` - Lists all problems found by ESLint.
--   `npm run lint:js:fix` - Auto-fixes problems found by ESLint (not all issues can be auto-fixed).
+| Command                   | Action                                                                 |
+| ------------------------- | ---------------------------------------------------------------------- |
+| `npm run format`          | Formats files with Prettier                                            |
+| `npm run lint:script`     | Lists all problems found by ESLint                                     |
+| `npm run lint:script:fix` | Auto-fixes problems found by ESLint (not all issues can be auto-fixed) |
 
 ## Found an Issue?
 
