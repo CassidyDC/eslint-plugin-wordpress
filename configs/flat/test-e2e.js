@@ -1,10 +1,10 @@
 /**
  * External dependencies
  */
-const jest = require( 'eslint-plugin-jest' );
-const globals = require( 'globals' );
+import jest from 'eslint-plugin-jest';
+import globals from 'globals';
 
-module.exports = {
+export default {
 	...jest.configs[ 'flat/recommended' ],
 	name: '@wordpress/test-e2e',
 	languageOptions: {

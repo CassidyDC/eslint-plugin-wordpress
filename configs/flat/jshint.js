@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	name: '@wordpress/jshint',
 	rules: {
 		curly: 'error',

@@ -1,4 +1,4 @@
-import type { Linter, Rule } from 'eslint';
+import type { Linter, Rule, ESLint } from 'eslint';
 
 /** WordPress ESLint plugin configurations */
 type AllConfigs = {
@@ -58,7 +58,7 @@ type AllRules = {
 /** WordPress ESLint Plugin flat configuration */
 type WordPressFlatConfig = {
 	/** Plugins object containing the WordPress plugin */
-	plugins?: Record< string, any >;
+	plugins?: Record< string, ESLint.Plugin >;
 	/** ESLint rules configuration */
 	rules?: Linter.RulesRecord;
 	/** Language options including parser settings */

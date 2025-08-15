@@ -8,7 +8,7 @@ const NAMES = new Set(
 );
 
 /** @type {import('eslint').Rule.RuleModule} */
-module.exports = {
+export default {
 	meta: {
 		type: 'problem',
 		schema: [],
@@ -17,7 +17,7 @@ module.exports = {
 			useGlobalThis:
 				'`{{ name }}` should not be accessed from process.env. Use `globalThis.{{name}}`.',
 			noGutenbergPhase:
-				'The GUTENBERG_PHASE environement variable is no longer available. Use IS_GUTENBERG_PLUGIN (boolean).',
+				'The GUTENBERG_PHASE environment variable is no longer available. Use IS_GUTENBERG_PLUGIN (boolean).',
 		},
 	},
 	create( context ) {

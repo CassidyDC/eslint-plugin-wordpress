@@ -1,11 +1,11 @@
 /**
  * Internal dependencies
  */
-const {
+import {
 	TRANSLATION_FUNCTIONS,
 	getTranslateFunctionName,
 	getTranslateFunctionArgs,
-} = require( '../utils' );
+} from '../utils/index.js';
 
 function isAcceptableLiteralNode( node ) {
 	if ( node.type === 'BinaryExpression' ) {
@@ -25,7 +25,7 @@ function isAcceptableLiteralNode( node ) {
 	return node.type === 'Literal';
 }
 
-module.exports = {
+export default {
 	meta: {
 		type: 'problem',
 		schema: [],

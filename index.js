@@ -1,8 +1,9 @@
 /**
  * Internal dependencies
  */
-const plugin = require( './plugin' );
+import plugin from './plugin.js';
+import * as flatConfigs from './configs/flat/index.js';
 
-Object.assign( plugin.configs, require( './configs/flat' ) );
+Object.assign( plugin.configs, flatConfigs );
 
-module.exports = plugin;
+export default plugin;

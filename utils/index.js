@@ -1,17 +1,17 @@
 /**
  * Internal dependencies
  */
-const {
+import {
 	TRANSLATION_FUNCTIONS,
 	REGEXP_SPRINTF_PLACEHOLDER,
 	REGEXP_SPRINTF_PLACEHOLDER_UNORDERED,
-} = require( './constants' );
-const { getTranslateFunctionArgs } = require( './get-translate-function-args' );
-const { getTextContentFromNode } = require( './get-text-content-from-node' );
-const { getTranslateFunctionName } = require( './get-translate-function-name' );
-const isPackageInstalled = require( './is-package-installed' );
+} from './constants.js';
+import { getTranslateFunctionArgs } from './get-translate-function-args.js';
+import { getTextContentFromNode } from './get-text-content-from-node.js';
+import { getTranslateFunctionName } from './get-translate-function-name.js';
+import { isPackageInstalled } from './is-package-installed.js';
 
-module.exports = {
+export {
 	TRANSLATION_FUNCTIONS,
 	REGEXP_SPRINTF_PLACEHOLDER,
 	REGEXP_SPRINTF_PLACEHOLDER_UNORDERED,

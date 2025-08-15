@@ -36,7 +36,7 @@ function isComponent( node ) {
 	return false;
 }
 
-module.exports = {
+export default {
 	meta: {
 		type: 'problem',
 		schema: [],

@@ -1,9 +1,9 @@
 /**
  * External dependencies
  */
-const jsxA11y = require( 'eslint-plugin-jsx-a11y' );
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 
-module.exports = [
+export default [
 	jsxA11y.flatConfigs.recommended,
 	{
 		name: '@wordpress/jsx-a11y',

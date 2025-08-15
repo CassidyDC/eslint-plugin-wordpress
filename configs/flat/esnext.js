@@ -1,15 +1,19 @@
 /**
  * External dependencies
  */
-const { cosmiconfigSync } = require( 'cosmiconfig' );
-const ESLintParser = require( '@babel/eslint-parser' );
-const babelParser = require( '@babel/eslint-parser' );
+import { cosmiconfigSync } from 'cosmiconfig';
+import babelParser from '@babel/eslint-parser';
+
+/**
+ * Internal dependencies
+ */
+import es5 from './es5.js';
 
 const config = {
 	name: '@wordpress/esnext',
 	languageOptions: {
 		ecmaVersion: 6,
-		parser: ESLintParser,
+		parser: babelParser,
 		parserOptions: {
 			sourceType: 'module',
 		},
@@ -66,12 +70,10 @@ if ( ! result || ! result.filepath ) {
 			requireConfigFile: false,
 			babelOptions: {
 				configFile: false,
-				presets: [
-					require.resolve( '@wordpress/babel-preset-default' ),
-				],
+				presets: [ '@wordpress/babel-preset-default' ],
 			},
 		},
 	};
 }
 
-module.exports = [ ...require( './es5.js' ), config ];
+export default [ ...es5, config ];

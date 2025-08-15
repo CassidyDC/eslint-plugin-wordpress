@@ -29,6 +29,4 @@ function getTextContentFromNode( node ) {
 	return false;
 }
 
-module.exports = {
-	getTextContentFromNode,
-};
+export { getTextContentFromNode };

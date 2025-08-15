@@ -1,13 +1,16 @@
 /**
  * Internal dependencies
  */
-const { name, version } = require( './package.json' );
+import pkg from './package.json' with { type: 'json' };
+import rules from './rules/index.js';
 
-module.exports = {
+const { name, version } = pkg;
+
+export default {
 	meta: {
 		name,
 		version,
 	},
 	configs: {},
-	rules: require( './rules' ),
+	rules,
 };

@@ -1,12 +1,12 @@
 /**
  * Internal dependencies
  */
-const {
+import {
 	TRANSLATION_FUNCTIONS,
 	getTextContentFromNode,
 	getTranslateFunctionName,
 	getTranslateFunctionArgs,
-} = require( '../utils' );
+} from '../utils/index.js';
 
 const EN_DASH = '–';
 const HYPHEN_IN_RANGE = /(\d\s+-\s+\d)|(\d-\d)/g;
@@ -54,7 +54,7 @@ function makeFixerFunction( arg ) {
 	};
 }
 
-module.exports = {
+export default {
 	meta: {
 		type: 'problem',
 		schema: [],

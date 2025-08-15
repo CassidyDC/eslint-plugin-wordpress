@@ -1,21 +1,30 @@
 /**
  * External dependencies
  */
-const globals = require( 'globals' );
-const importPlugin = require( 'eslint-plugin-import' );
+import globals from 'globals';
+import importXPlugin from 'eslint-plugin-import-x';
+
+/**
+ * Internal dependencies
+ */
+import jsxA11y from './jsx-a11y.js';
+import custom from './custom.js';
+import react from './react.js';
+import esnext from './esnext.js';
+import i18n from './i18n.js';
 
 // Exclude bundled WordPress packages from the list.
 const wpPackagesRegExp = '^@wordpress/(?!(icons|interface|style-engine))';
 
 const config = [
-	...require( './jsx-a11y.js' ),
-	...require( './custom.js' ),
-	...require( './react.js' ),
-	...require( './esnext.js' ),
-	require( './i18n.js' ),
+	...jsxA11y,
+	...custom,
+	...react,
+	...esnext,
+	i18n,
 	{
 		name: '@wordpress/formatting',
-		plugins: { import: importPlugin },
+		plugins: { import: importXPlugin },
 		languageOptions: {
 			globals: {
 				...globals.node,
@@ -26,26 +35,26 @@ const config = [
 			},
 		},
 		settings: {
-			'import/internal-regex': wpPackagesRegExp,
-			'import/extensions': [ '.js', '.jsx' ],
+			'import-x/internal-regex': wpPackagesRegExp,
+			'import-x/extensions': [ '.js', '.jsx' ],
 		},
 		rules: {
-			'import/no-extraneous-dependencies': [
+			'import-x/no-extraneous-dependencies': [
 				'error',
 				{
 					peerDependencies: true,
 				},
 			],
-			'import/no-unresolved': [
+			'import-x/no-unresolved': [
 				'error',
 				{
 					ignore: [ wpPackagesRegExp ],
 				},
 			],
-			'import/default': 'warn',
-			'import/named': 'warn',
+			'import-x/default': 'warn',
+			'import-x/named': 'warn',
 		},
 	},
 ];
 
-module.exports = config;
+export default config;

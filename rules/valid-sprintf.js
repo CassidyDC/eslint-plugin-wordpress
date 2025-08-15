@@ -1,15 +1,15 @@
 /**
  * Internal dependencies
  */
-const {
+import {
 	REGEXP_SPRINTF_PLACEHOLDER,
 	REGEXP_SPRINTF_PLACEHOLDER_UNORDERED,
 	getTranslateFunctionName,
 	getTranslateFunctionArgs,
 	getTextContentFromNode,
-} = require( '../utils' );
+} from '../utils/index.js';
 
-module.exports = {
+export default {
 	meta: {
 		type: 'problem',
 		schema: [],
@@ -71,7 +71,7 @@ module.exports = {
 						} );
 						break;
 
-					case 'CallExpression':
+					case 'CallExpression': {
 						const argFunctionName = getTranslateFunctionName(
 							args[ 0 ].callee
 						);
@@ -92,6 +92,7 @@ module.exports = {
 						}
 
 						break;
+					}
 
 					case 'Identifier':
 						// Identifiers may refer to a valid string variable.

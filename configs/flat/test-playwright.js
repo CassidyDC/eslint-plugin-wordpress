@@ -1,9 +1,9 @@
 /**
  * External dependencies
  */
-const playwright = require( 'eslint-plugin-playwright' );
+import playwright from 'eslint-plugin-playwright';
 
-module.exports = {
+export default {
 	...playwright.configs[ 'flat/recommended' ],
 	name: '@wordpress/test-playwright',
 };

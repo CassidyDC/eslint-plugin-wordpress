@@ -1,9 +1,7 @@
 {
 	"name": "@cassidydc/eslint-plugin-wordpress",
-	"version": "1.1.2",
+	"version": "1.2.0",
 	"description": "ESLint plugin for using a modern flat config in WordPress development.",
-	"author": "Jacob Cassidy",
-	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"eslint",
 		"gutenberg",
@@ -11,6 +9,13 @@
 		"wordpress"
 	],
 	"homepage": "https://github.com/CassidyDC/eslint-plugin-wordpress/blob/main/README.md",
+	"author": {
+		"name": "Jacob Cassidy",
+		"email": "jacob@cassidydc.com",
+		"url": "https://cassidydc.com"
+	},
+	"license": "GPL-2.0-or-later",
+	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/cassidydc/eslint-plugin-wordpress.git"
@@ -18,30 +23,29 @@
 	"bugs": {
 		"url": "https://github.com/cassidydc/eslint-plugin-wordpress/issues"
 	},
+	"main": "index.js",
 	"files": [
 		"configs",
-		"patches",
 		"rules/",
 		"!rules/__tests__",
 		"utils",
 		"CHANGELOG.md",
 		"index.js",
 		"index.d.ts",
+		"LICENSE",
 		"plugin.js",
 		"README.md"
 	],
-	"main": "index.js",
 	"types": "index.d.ts",
 	"dependencies": {
-		"@babel/core": "^7.28.0",
 		"@babel/eslint-parser": "^7.28.0",
-		"@babel/runtime": "^7.28.2",
 		"@wordpress/babel-preset-default": "^8.28.0",
 		"@wordpress/prettier-config": "^4.28.0",
 		"cosmiconfig": "^9.0.0",
 		"eslint": "^9.33.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-import": "^2.32.0",
+		"eslint-plugin-import-x": "^4.16.1",
 		"eslint-plugin-jest": "^29.0.1",
 		"eslint-plugin-jsdoc": "^54.0.0",
 		"eslint-plugin-jsx-a11y": "^6.10.2",
@@ -56,11 +60,12 @@
 	"devDependencies": {
 		"jest": "^30.0.5",
 		"markdownlint-cli2": "^0.18.1",
-		"prettier": "npm:wp-prettier@^3.0.3"
+		"prettier": "npm:wp-prettier@^3.0.3",
+		"prettier-plugin-multiline-arrays": "^4.0.3"
 	},
 	"overrides": {
 		"@wordpress/babel-preset-default": {
-			"@babel/runtime": "^7.28.2"
+			"@babel/runtime": "^7.28.3"
 		}
 	},
 	"peerDependencies": {
@@ -83,9 +88,9 @@
 		"format": "npx prettier . --write",
 		"lint:docs": "npx markdownlint-cli2 \"**/*.md\"",
 		"lint:docs:fix": "npx markdownlint-cli2 \"**/*.md\" --fix",
-		"lint:scripts": "npx eslint --no-warn-ignored",
-		"lint:scripts:fix": "npx eslint --no-warn-ignored --fix",
-		"test": "jest",
-		"test:ref": "jest ./rules/__tests__"
+		"lint:scripts": "npx eslint",
+		"lint:scripts:fix": "npx eslint --fix",
+		"test": "node --experimental-vm-modules node_modules/.bin/jest",
+		"test:ref": "node --experimental-vm-modules node_modules/.bin/jest ./rules/__tests__"
 	}
 }

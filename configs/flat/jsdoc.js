@@ -1,8 +1,8 @@
 /**
  * External dependencies
  */
-const globals = require( 'globals' );
-const jsdoc = require( 'eslint-plugin-jsdoc' );
+import globals from 'globals';
+import jsdoc from 'eslint-plugin-jsdoc';
 
 /**
  * The temporary list of types defined in Gutenberg which are allowed to avoid
@@ -35,7 +35,11 @@ const temporaryWordPressInternalTypes = [
  * should be removed once the related issues is fixed:
  * https://github.com/WordPress/gutenberg/issues/18045
  */
-const temporaryExternalTypes = [ 'DOMHighResTimeStamp', 'espree' ];
+const temporaryExternalTypes = [
+	'DOMHighResTimeStamp',
+	'espree',
+	'espree.Node',
+];
 
 /**
  * Helpful utilities that are globally defined and known to the TypeScript compiler.
@@ -72,7 +76,7 @@ const typescriptUtilityTypes = [
 	'false',
 ];
 
-module.exports = [
+export default [
 	jsdoc.configs[ 'flat/recommended' ],
 	{
 		name: '@wordpress/jsdoc',

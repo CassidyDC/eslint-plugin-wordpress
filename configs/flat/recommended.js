@@ -1,29 +1,30 @@
 /**
  * External dependencies
  */
-const { cosmiconfigSync } = require( 'cosmiconfig' );
-const eslintConfigPrettier = require( 'eslint-config-prettier' );
-const tseslint = require( 'typescript-eslint' );
-const prettierRecommended = require( 'eslint-plugin-prettier/recommended' );
+import { cosmiconfigSync } from 'cosmiconfig';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import tseslint from 'typescript-eslint';
+import prettierRecommended from 'eslint-plugin-prettier/recommended';
 
 /**
  * WordPress dependencies
  */
+import defaultPrettierConfig from '@wordpress/prettier-config';
 
 /**
  * Internal dependencies
  */
-const { isPackageInstalled } = require( '../../utils' );
-const defaultPrettierConfig = require( '@wordpress/prettier-config' );
+import { isPackageInstalled } from '../../utils/index.js';
+import recommendedWithFormatting from './recommended-with-formatting.js';
 
-const config = [ ...require( './recommended-with-formatting.js' ) ];
+const config = [ ...recommendedWithFormatting ];
 
 if ( isPackageInstalled( 'typescript' ) ) {
 	const typeScriptConfig = tseslint.config( {
 		extends: [ tseslint.configs.base, tseslint.configs.eslintRecommended ],
 		files: [ '**/*.ts', '**/*.tsx' ],
 		settings: {
-			'import/resolver': {
+			'import-x/resolver': {
 				node: {
 					extensions: [ '.js', '.jsx', '.ts', '.tsx' ],
 				},
@@ -31,7 +32,7 @@ if ( isPackageInstalled( 'typescript' ) ) {
 		},
 		rules: {
 			'no-duplicate-imports': 'off',
-			'import/no-duplicates': 'error',
+			'import-x/no-duplicates': 'error',
 			// Don't require redundant JSDoc types in TypeScript files.
 			'jsdoc/require-param-type': 'off',
 			'jsdoc/require-returns-type': 'off',
@@ -73,4 +74,4 @@ if ( isPackageInstalled( 'prettier' ) ) {
 	} );
 }
 
-module.exports = config;
+export default config;

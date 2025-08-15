@@ -1,10 +1,15 @@
 /**
  * External dependencies
  */
-const react = require( 'eslint-plugin-react' );
-const reactHooks = require( 'eslint-plugin-react-hooks' );
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
 
-module.exports = [
+/**
+ * Internal dependencies
+ */
+import wordpressPlugin from '../../plugin.js';
+
+export default [
 	react.configs.flat.recommended,
 	{
 		name: '@wordpress/react',
@@ -21,7 +26,7 @@ module.exports = [
 			},
 		},
 		plugins: {
-			'@wordpress': require( '../../plugin' ),
+			'@wordpress': wordpressPlugin,
 			react,
 			'react-hooks': reactHooks,
 		},
