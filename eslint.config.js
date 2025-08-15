@@ -32,15 +32,13 @@ export default defineConfig( [
 			wordpress,
 		},
 		extends: [
+			'import-x/recommended',
 			'js/recommended',
 			'tseslint/recommended',
 			'wordpress/recommended',
-			'import-x/recommended',
 		],
 		files: [ '**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}' ],
 		languageOptions: {
-			ecmaVersion: 'latest',
-			sourceType: 'module',
 			globals: {
 				...globals.browser,
 				...globals.jest,
@@ -50,7 +48,6 @@ export default defineConfig( [
 			reportUnusedInlineConfigs: 'warn',
 		},
 		rules: {
-			'@typescript-eslint/no-require-imports': 'warn',
 			'no-unused-vars': 'warn',
 			yoda: [ 'warn', 'never' ],
 		},
