@@ -15,7 +15,6 @@
 		"url": "https://cassidydc.com"
 	},
 	"license": "GPL-2.0-or-later",
-	"main": "index.js",
 	"type": "module",
 	"repository": {
 		"type": "git",
@@ -24,15 +23,16 @@
 	"bugs": {
 		"url": "https://github.com/cassidydc/eslint-plugin-wordpress/issues"
 	},
+	"main": "index.js",
 	"files": [
 		"configs",
-		"patches",
 		"rules/",
 		"!rules/__tests__",
 		"utils",
 		"CHANGELOG.md",
 		"index.js",
 		"index.d.ts",
+		"LICENSE",
 		"plugin.js",
 		"README.md"
 	],
@@ -65,7 +65,7 @@
 	},
 	"overrides": {
 		"@wordpress/babel-preset-default": {
-			"@babel/runtime": "^7.28.2"
+			"@babel/runtime": "^7.28.3"
 		}
 	},
 	"peerDependencies": {
