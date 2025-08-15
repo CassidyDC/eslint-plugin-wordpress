@@ -18,10 +18,10 @@
 	"type": "module",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/cassidydc/eslint-plugin-wordpress.git"
+		"url": "git+https://github.com/CassidyDC/eslint-plugin-wordpress.git"
 	},
 	"bugs": {
-		"url": "https://github.com/cassidydc/eslint-plugin-wordpress/issues"
+		"url": "https://github.com/CassidyDC/eslint-plugin-wordpress/issues"
 	},
 	"main": "index.js",
 	"files": [
