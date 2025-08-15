@@ -35,7 +35,11 @@ const temporaryWordPressInternalTypes = [
  * should be removed once the related issues is fixed:
  * https://github.com/WordPress/gutenberg/issues/18045
  */
-const temporaryExternalTypes = [ 'DOMHighResTimeStamp', 'espree' ];
+const temporaryExternalTypes = [
+	'DOMHighResTimeStamp',
+	'espree',
+	'espree.Node',
+];
 
 /**
  * Helpful utilities that are globally defined and known to the TypeScript compiler.
