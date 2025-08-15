@@ -9,7 +9,7 @@ export const isPackageInstalled = ( packageName ) => {
 		if ( import.meta.resolve( packageName ) ) {
 			return true;
 		}
-	} catch ( error ) {
+	} catch {
 		// Package not found
 	}
 
