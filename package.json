@@ -1,6 +1,6 @@
 {
 	"name": "@cassidydc/eslint-plugin-wordpress",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"description": "ESLint plugin for using a modern flat config in WordPress development.",
 	"keywords": [
 		"eslint",
