@@ -22,13 +22,14 @@ function getTranslateFunctionArgs( functionName, args, includeContext = true ) {
 			// _n( single, plural, number, domain ) -> [ single, plural ].
 			return args.slice( 0, 2 );
 
-		case '_nx':
+		case '_nx': {
 			// _nx( single, plural, number, context, domain ) -> [ single, plural, context ].
 			const result = args.slice( 0, 2 );
 			if ( includeContext ) {
 				result.push( args[ 3 ] );
 			}
 			return result;
+		}
 
 		default:
 			return [];

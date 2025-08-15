@@ -71,7 +71,7 @@ export default {
 						} );
 						break;
 
-					case 'CallExpression':
+					case 'CallExpression': {
 						const argFunctionName = getTranslateFunctionName(
 							args[ 0 ].callee
 						);
@@ -92,6 +92,7 @@ export default {
 						}
 
 						break;
+					}
 
 					case 'Identifier':
 						// Identifiers may refer to a valid string variable.
