@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.2.0] - 2025-08-15
 
-This version refactors all CommonJS files in this plugin to to ECMAScript Modules.
+This version refactors all CommonJS files in this plugin to ECMAScript Modules.
 
 ### Added
 
